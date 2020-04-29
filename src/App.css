@@ -1,68 +1,142 @@
 .App {
   text-align: center;
+  background-color: rgb(171, 171, 171);
 }
 
 main {
-  margin: 5vh auto;
-  background-color: rgb(224, 224, 224);
-  width: 80vw;
-  height: 90vh;
-  border-radius: 20px;
-  padding: 15px;
+  margin: auto auto;
+  /* background-color: rgb(224, 224, 224); */
+  width: 100vw;
+  height: 100vh;
+  border-radius: 5px;
+  padding: 5px;
+  
 }
 
 .wrapper {
   display: grid;
   grid-template-columns: 1fr 5fr 2fr;
   grid-template-rows: 3fr 1fr;
+  grid-column-gap: 5px;
   background-color: rgb(255, 255, 255);
-  margin: 0 auto;   
-  height: 91%;
+  /* margin: 0 auto;    */
+  height: 94%;
   width: 100%;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
-#vertmenu {
-  grid-column: 1 / span 1;
+
+
+/* Map CSS */
+#map {
+  height: 100%;
+}
+/* Optional: Makes the sample page fill the window. */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+#description {
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+#infowindow-content .title {
+  font-weight: bold;
+}
+
+#infowindow-content {
+  display: none;
+}
+
+#map #infowindow-content {
+  display: inline;
+}
+
+.pac-card {
+  margin: 10px 10px 0 0;
+  border-radius: 2px 0 0 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  background-color: #fff;
+  font-family: Roboto;
+}
+
+#pac-container {
+  padding-bottom: 12px;
+  margin-right: 12px;
+}
+
+.pac-controls {
+  display: inline-block;
+  padding: 5px 11px;
+}
+
+.pac-controls label {
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 300;
+}
+
+#pac-input {
+  background-color: #fff;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+  margin-left: 12px;
+  padding: 0 11px 0 13px;
+  text-overflow: ellipsis;
+  width: 400px;
+}
+
+#pac-input:focus {
+  border-color: #4d90fe;
+}
+
+#title {
+  color: #fff;
+  background-color: #4d90fe;
+  font-size: 25px;
+  font-weight: 500;
+  padding: 6px 12px;
+}
+#target {
+  width: 345px;
+}
+
+.youtube {
+  margin: 0 auto;
+
+  /* width: 100%; */
+}
+
+.btn-outline-danger {
   margin: 10px;
+  padding: 10px 20px;
+  font-size: 20px;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  margin-right: 0.5%;
+  padding-left: 25px;
 }
 
-.map {
-  grid-column: 2 / span 1;
-  width: auto;
-  border: rgb(221, 219, 219) 1px solid;
-  text-align: center;
+#whoButton {
   margin: 10px;
-  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 20px;
+  border-top-left-radius: 0%;
+  border-bottom-left-radius: 0%;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  margin-left: 0.5%;
+  padding-left: 25px;
 }
 
-.hello {
-  padding-top: 30%;
-}
-
-.data {
-  grid-column: 3 / span 1;
-  width: auto;
-  border: rgb(221, 219, 219) 1px solid;
-  margin: 10px;
-  border-radius: 4px;
-  text-align: center;
-}
-
-.covid {
-  padding-top: 90%;
-}
-
-.news {
-  margin: 10px;
-  grid-column: 1 / span 3;
-  text-align: center;
-  height: 80%;
-  width: auto;
-  border: rgb(221, 219, 219) 1px solid;
-}
-
-.newsPlaceholder {
-  padding-top: 3%;
-  font-size: 60px;
+.cdcTweets {
+  width: 400px;
+  margin: 0 auto;
 }
