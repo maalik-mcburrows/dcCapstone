@@ -5,7 +5,7 @@ import './App.css';
 import VerticalMenu from './components/VerticalMenu';
 import Menu from './components/Menu';
 import News from './components/News';
-import ApiTest from './components/ApiTest';
+import Case from './components/Case';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import Exercise from './components/exercise';
 
@@ -38,7 +38,7 @@ function App() {
                   <Route exact path="/" component={News} />
                 </>
                 <Route path="/exercises" component={Exercise} />
-                <Route exact path="/" component={ApiTest}/>
+                <Route exact path="/" component={Case}/>
             </div>
           </main>
         </Switch>

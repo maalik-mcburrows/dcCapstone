@@ -1,0 +1,23 @@
+let express = require('express');
+let router = express.Router();
+let caseModel = require('../models/caseModel');
+
+router.post('/', async function(req, res) {
+    console.log(req.body);
+    const{
+        test_date,
+        testing_site,
+        state
+    } = req.body
+
+    const postData = await caseModel.addCase(
+        test_date,
+        testing_site,
+        state
+    );
+    console.log('DATA FROM FRONT END USER RESPONSE: ', postData);
+
+    res.status(200).redirect('/')
+});
+
+module.exports = router;
