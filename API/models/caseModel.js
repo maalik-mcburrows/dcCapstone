@@ -8,6 +8,17 @@ class caseModel {
         this.state = state
     }
 
+    static async getCases() {
+        try {
+            const response = await db.any(`SELECT * FROM corona_cases;`);
+            console.log(response);
+            return response;
+        } catch(error) {
+            console.error('ERROR GETTING ALL CASES: ', error);
+            return error;
+        }
+    }
+
     static async addCase(test_date, testing_site, state) {
         try{
             const response = await db.one(
