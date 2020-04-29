@@ -11,7 +11,10 @@ class Twitter extends Component {
                 options={{height: 360}}
                 noHeader
                 noFooter
+<<<<<<< HEAD
                 theme="dark"
+=======
+>>>>>>> 9d09315cb914fa97bf748ea82b471804e881d123
             />
         )
     }
