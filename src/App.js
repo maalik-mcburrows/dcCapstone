@@ -5,14 +5,9 @@ import './App.css';
 import VerticalMenu from './components/VerticalMenu';
 import Menu from './components/Menu';
 import News from './components/News';
+import ApiTest from './components/ApiTest';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import Exercise from './components/exercise';
-<<<<<<< HEAD
-import ApiTest from './components/ApiTest';
-// import Youtube from './components/Youtube';
-// import Twitter from './components/Twitter';
-=======
->>>>>>> e330238146fb6dd536f3befc5e33738646942152
 
 function App() {
   return (
