@@ -7,6 +7,7 @@ import Menu from './components/Menu';
 import News from './components/News';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import Exercise from './components/exercise';
+import ApiTest from './components/ApiTest';
 // import Youtube from './components/Youtube';
 // import Twitter from './components/Twitter';
 
@@ -39,6 +40,7 @@ function App() {
                   <Route exact path="/" component={News} />
                 </>
                 <Route path="/exercises" component={Exercise} />
+                <Route exact path="/" component={ApiTest}/>
             </div>
             {/* <Route exact path="/" component={Youtube} /> */}
             {/* <Route exact path="/" component={Twitter} /> */}
