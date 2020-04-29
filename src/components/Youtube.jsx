@@ -3,14 +3,7 @@ import React, { Component } from 'react';
 const API = 'AIzaSyCF6-Gp5GftHubZ6danNcSYQATv47ZtDS0'
 const playlistId = 'PLvrp9iOILTQaJa78zFQ0QgvShQ2HEwHxP'
 const maxResults = 10;
-<<<<<<< HEAD
-// const whoChannelId = 'UC07-dOwgza1IguKA86jqxNA'
-
 const cdcURL = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=${maxResults}&playlistId=${playlistId}&key=${API}`
-// const whoURL = `https://www.googleapis.com/youtube/v3/search?key=${API}&channelId=${whoChannelId}&part=snippet,id&order=date&maxResults=${maxResults}`
-=======
-const cdcURL = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=${maxResults}&playlistId=${playlistId}&key=${API}`
->>>>>>> e330238146fb6dd536f3befc5e33738646942152
 
 class Youtube extends Component {
 
