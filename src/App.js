@@ -7,8 +7,8 @@ import Menu from './components/Menu';
 import News from './components/News';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import Exercise from './components/exercise';
-import Youtube from './components/Youtube';
-import Twitter from './components/Twitter';
+// import Youtube from './components/Youtube';
+// import Twitter from './components/Twitter';
 
 function App() {
   return (
