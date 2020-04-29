@@ -8,11 +8,11 @@ class Twitter extends Component {
     render() {
         return (
 
-                        <TwitterTimelineEmbed
-                            sourceType="profile"
-                            screenName='cdcgov'
-                            options={{height: 360}}
-                        />
+            <TwitterTimelineEmbed
+                sourceType="profile"
+                screenName='cdcgov'
+                options={{height: 360}}
+            />
 
         )
     }
