@@ -34,15 +34,15 @@ class Case extends Component {
                 </div>
                 <form className="caseForm" onSubmit={this.handleSubmit}>
                     <div style={{paddingRight: "10px"}}>
-                        <input type="text" name="test_date" value={test_date} onChange={this.handleChange} />
+                        <input placeholder="Test Date" style={{borderRadius: "10px", textAlign: "center"}} type="text" name="test_date" value={test_date} onChange={this.handleChange} />
                     </div>
                     <div style={{paddingRight: "10px"}}>
-                        <input type="text" name="testing_site" value={testing_site} onChange={this.handleChange} />
+                        <input placeholder="State" style={{borderRadius: "10px", textAlign: "center"}} type="text" name="state" value={state} onChange={this.handleChange} />
                     </div>
                     <div style={{paddingRight: "10px"}}>
-                        <input type="text" name="state" value={state} onChange={this.handleChange} />
+                        <input placeholder="Testing Location" style={{borderRadius: "10px", textAlign: "center"}} type="text" name="testing_site" value={testing_site} onChange={this.handleChange} />
                     </div>
-                    <button type="submit"> SUBMIT </button>
+                    <button style={{borderRadius: "10px"}} type="submit"> SUBMIT </button>
                 </form>  
             </div>
         )
