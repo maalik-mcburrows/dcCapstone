@@ -6,7 +6,7 @@ class Case extends Component {
     state = { 
         test_date: "",
         testing_site: [],
-        state: "georgia" 
+        state: "alabama" 
     }
 
     handleChange = (event) => {
@@ -19,37 +19,27 @@ class Case extends Component {
 
     stateHandleChange = (event) => {
         this.setState({
-            testing_site: this.getTestingSites(),
             state: event.target.value
         }); 
+        this.getTestingSites(event.target.value);
     }
-
-    // stateOnChange = () => {
-    //     this.setState({
-    //         state : this.stateHandleChange()
-    //     })    
-    //     console.log(this.state.state)    
-    // }
 
     async componentDidMount() {
-        this.getTestingSites();
+        this.getTestingSites(this.state.state);
     }
 
-    getTestingSites = async() => {
-        // const state = this.state.state
-        // const lowerState = state.toLowerCase();
-        const testSiteUrl = await fetch(`https://covid-19-testing.github.io/locations/${this.state.state.toLowerCase()}/complete.json`);
+    getTestingSites = async(stateName) => {
+        const testSiteUrl = await fetch(`https://covid-19-testing.github.io/locations/${stateName.toLowerCase()}/complete.json`);
         const response = await testSiteUrl.json();
+        const siteNames = [];
         const sites = response.map(site => {
-            return site.name
+            return siteNames.push(site.name);
+        });
+        console.log(siteNames);
+        this.setState({
+            testing_site : siteNames
         })
         // console.log('test site =>', sites);
-        // return response;
-        this.setState({
-            testing_site : sites
-        }, function () {
-            console.log('current sites in state: ', this.state.testing_site)
-        })
     }
 
     handleSubmit = (event) => {
@@ -90,7 +80,11 @@ class Case extends Component {
                     </div>
                     
                     <div style={{paddingRight: "10px"}}>
-                        <input placeholder="Testing Location" style={{borderRadius: "10px", textAlign: "center"}} type="text" name="testing_site" value={testing_site} onChange={this.handleChange} />
+                        <select onChange={this.handleChange}>
+                            {testing_site.map(site => (
+                                <option placeholder="Testing Location" style={{borderRadius: "10px", textAlign: "center"}} name="testing_site" value={site} >{site}</option>
+                            ))}
+                        </select>
                     </div>
                     <button style={{borderRadius: "10px"}} type="submit"> SUBMIT </button>
                 </form>  
