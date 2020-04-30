@@ -25,7 +25,9 @@ main {
   border-radius: 5px;
 }
 
-
+div.item iframe {
+  border-radius: 10px;
+}
 
 /* Map CSS */
 #map {
