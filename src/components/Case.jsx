@@ -30,7 +30,7 @@ class Case extends Component {
         return (
             <div className="case">
                 <div className="caseTitle">
-                    <h1>Have you tested positive for COVID-19? Please file an anonymous case report below.</h1>
+                    <h1>Have you tested positive for <span style={{color: "red"}}>COVID-19</span>? Please file an <span style={{color: "red"}}>anonymous</span> case report below.</h1>
                 </div>
                 <form className="caseForm" onSubmit={this.handleSubmit}>
                     <div style={{paddingRight: "10px"}}>

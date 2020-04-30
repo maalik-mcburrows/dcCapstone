@@ -149,11 +149,15 @@ html, body {
 
 .case {
   margin: auto;
+  height: 50vh;
 }
 
 .caseTitle {
-  width: 600px;
+  width: 480px;
   padding: 50px;
+  font-family: impact;
+  font-style: italic;
+  font-variant: small-caps;
 }
 
 .caseForm {
