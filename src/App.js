@@ -22,9 +22,9 @@ function App() {
           <a href="https://www.google.com" className="item">
             News
           </a>
-          <a href="https://www.google.com" className="item">
-            Trends
-          </a>
+          <Link to={"/case"} className="item">
+            Report a Case
+          </Link>
           <Link to={"/exercises"} className="item">
             Things To Do
           </Link>
@@ -38,7 +38,7 @@ function App() {
                   <Route exact path="/" component={News} />
                 </>
                 <Route path="/exercises" component={Exercise} />
-                <Route exact path="/" component={Case}/>
+                <Route path="/case" component={Case}/>
             </div>
           </main>
         </Switch>

@@ -19,7 +19,7 @@ class Case extends Component {
     handleSubmit = (event) => {
         event.preventDefault()
         const data = this.state
-        const url = 'http://localhost:3000/case';
+        const url = 'http://localhost:9000/case';
         axios.post(url,data)
         .then(response=>console.log(response))
         .catch(e=>console.log(e))
