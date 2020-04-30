@@ -15,22 +15,23 @@ function App() {
       <Router>
         <Switch>
           <main>
-          <div className="ui menu">
-          <Link to={"/"} className="header item">
-            Home
-          </Link>
-          <a href="https://www.google.com" className="item">
-            News
-          </a>
-          <Link to={"/case"} className="item">
-            Report a Case
-          </Link>
-          <Link to={"/exercises"} className="item">
-            Things To Do
-          </Link>
-          <Route path="/" component={Menu} />
-        </div>
-            <div className="wrapper">
+            <div className="ui menu">
+                <Link to={"/"} className="header item">
+                  Home
+                </Link>
+                <a href="https://www.google.com" className="item">
+                  News
+                </a>
+                <Link to={"/case"} className="item">
+                  Report a Case
+                </Link>
+                <Link to={"/exercises"} className="item">
+                  Things To Do
+                </Link>
+                <Route path="/" component={Menu} />
+            </div>
+            
+            <div className="wrapper" id="sidePage">
                 <Route exact path="/" component={VerticalMenu}/>
                 <Route exact path="/" component={Map} />
                 <Route exact path="/" component={CovidData} />

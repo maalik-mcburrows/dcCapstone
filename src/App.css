@@ -140,3 +140,26 @@ html, body {
   width: 400px;
   margin: 0 auto;
 }
+
+#sidePage {
+  /* height: 100vh;
+  width: 100vw; */
+  display: inline-flex;
+}
+
+.case {
+  margin: auto;
+}
+
+.caseTitle {
+  width: 600px;
+  padding: 50px;
+}
+
+.caseForm {
+  display: inline-flex;
+}
+
+.exercise {
+  margin: auto;
+}

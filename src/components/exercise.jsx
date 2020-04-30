@@ -72,7 +72,7 @@ class Exercise extends Component {
     render() {
         const { muscles, equipment, exercises } = this.state
         return (
-            <div>
+            <div className="exercise">
                 What body part would you like to work?
                 <div>
                     <form onSubmit={this.handleSubmit}>

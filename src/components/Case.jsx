@@ -28,15 +28,18 @@ class Case extends Component {
     render() {
         const { test_date, testing_site, state } = this.state
         return (
-            <div>
-                <form onSubmit={this.handleSubmit}>
-                    <div>
+            <div className="case">
+                <div className="caseTitle">
+                    <h1>Have you tested positive for COVID-19? Please file an anonymous case report below.</h1>
+                </div>
+                <form className="caseForm" onSubmit={this.handleSubmit}>
+                    <div style={{paddingRight: "10px"}}>
                         <input type="text" name="test_date" value={test_date} onChange={this.handleChange} />
                     </div>
-                    <div>
+                    <div style={{paddingRight: "10px"}}>
                         <input type="text" name="testing_site" value={testing_site} onChange={this.handleChange} />
                     </div>
-                    <div>
+                    <div style={{paddingRight: "10px"}}>
                         <input type="text" name="state" value={state} onChange={this.handleChange} />
                     </div>
                     <button type="submit"> SUBMIT </button>
