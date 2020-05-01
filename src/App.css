@@ -143,6 +143,8 @@ html, body {
   margin: 0 auto;
 }
 
+/* ---------------------------------  ALL STYLES FOR THE CASE COMPONENT ARE BELOW ------------------------------------------ */
+
 #sidePage {
   /* height: 100vh;
   width: 100vw; */
@@ -211,23 +213,16 @@ html, body {
   /* display: none; */
 }
 
-.exercise {
-  margin: auto;
-}
-
 .caseInputDiv:hover .inputElement{
   /* display: block; */
-  background-color: 	lightgray;
-  border-color: lightgray;
+  background-color: 	red;
+  border-color: red;
 }
 
-/* #caseInputDiv:hover .caseInputLabel{
-  color: red;
-} */
-
 #caseButtDiv:hover .caseInputButt{
-  background-color: #cc0000;
-  border-color:  #cc0000;
+  background-color: white;
+  border-color:  white;
+  color : red;
 }
 
 .spanTags {
@@ -247,4 +242,3 @@ html, body {
   border-radius: 15px;
 }
 
-/* .caseInputLabel:hover  .caseInputDiv {display: inline-flex;} */
