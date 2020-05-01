@@ -230,4 +230,21 @@ html, body {
   border-color:  #cc0000;
 }
 
+.spanTags {
+  color : red
+}
+
+.formSuccess{
+  margin: auto;
+  background-color: rgb(72, 72, 72);
+  width: 75vw;
+  padding: 25px;
+  font-family: impact;
+  font-style: italic;
+  color: white;
+  font-size: 35px;
+  font-variant: small-caps;
+  border-radius: 15px;
+}
+
 /* .caseInputLabel:hover  .caseInputDiv {display: inline-flex;} */

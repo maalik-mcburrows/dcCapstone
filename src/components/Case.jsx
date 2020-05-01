@@ -9,7 +9,8 @@ class Case extends Component {
         state: "alabama" ,
         site_name : 'asite',
         testing_site: [],
-        redirect: null
+        redirect: null,
+        caseSubmit : false
     }
 
     handleChange = (event) => {
@@ -60,8 +61,14 @@ class Case extends Component {
         axios.post(url,data)
         .then(response=>{ if (response.status === 200) {
             this.setState({
-                redirect : "/"
+                caseSubmit : true
             })
+            setTimeout(() => {
+                this.setState({
+                    redirect : "/"
+                })
+            }, 5000 )
+            
             console.log(response);
         }}) 
         .catch(e=>console.log(e))        
@@ -74,52 +81,60 @@ class Case extends Component {
         'Montana' , 'Nebraska' , 'Nevada' , 'New-Hampshire' , 'New-Jersey' , 'New-Mexico' , 'New-York' , 'North-Carolina' , 'North-Dakota' , 'Ohio', 'Oklahoma' , 'Oregon' , 'Pennsylvania', 'South-Carolina', 
         'Tennessee' , 'Texas' , 'Utah' , 'Vermont' , 'Virginia' , 'Washington' , 'West-Virginia' , 'Wisconsin' , 'Wyoming' ]
 
-        const { test_date, testing_site, site_name } = this.state
+        const { test_date, testing_site, site_name, caseSubmit } = this.state
 
         if (this.state.redirect) {
             return <Redirect to={this.state.redirect} />
           }
 
         console.log('this the sites', testing_site);
-        return (
-            <div className="case">
-                <div className="caseTitle">
-                    <h1>Have you tested positive for <span style={{color: "red"}}>COVID-19</span>? Please file an <span style={{color: "red"}}>anonymous</span> case report below.</h1>
+        if(caseSubmit === false) {
+            return (
+                <div className="case">
+                    <div className="caseTitle">
+                        <h1>Have you tested positive for <span className="spanTags">COVID-19</span>? Please file an <span className="spanTags" >anonymous</span> case report below.</h1>
+                    </div>
+                    <form className="caseForm" onSubmit={this.handleSubmit}>
+                        <div className="caseInputLabel">TEST DATE : 
+                            <div className="caseInputDiv">
+                                <input className="inputElement"  style={{ borderRadius: "15px", textAlign: "right", fontStyle: "normal", fontFamily: "sans-serif", color: "black" }} type="date" name="test_date" value={test_date} onChange={this.handleChange}/>
+                            </div>
+                        </div>
+                        <div className="caseInputLabel">STATE :
+                            <div className="caseInputDiv">
+                                {/* <input placeholder="State" style={{borderRadius: "10px", textAlign: "center"}} type="text" name="state" value={state} onChange={this.handleChange} /> */}
+                                <select className="inputElement"  style={{borderRadius: "10px", textAlign: "center", padding: "2.5px"}} onChange={this.stateHandleChange}>
+                                    {stateOptions.map((stateOption, index) => (
+                                        <option key={index} value={stateOption} name="state" >{stateOption}</option>
+                                    ))}
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <p style={{visibility: "hidden", width: "0px"}} value={site_name} name="site_name">{site_name}</p>
+                        </div>
+                        <div className="caseInputLabel">TEST SITE :
+                            <div className="caseInputDiv">
+                                <select className="inputElement" style={{borderRadius: "10px", textAlign: "center", padding: "2.5px"}} onChange={this.onSiteChange}>
+                                    {testing_site.map((site, index) => (
+                                        <option key={index} name="testing_site" value={site} >{site}</option>
+                                    ))}
+                                </select>
+                            </div>
+                        </div>
+                        <div id="caseButtDiv" className="caseInputDiv">
+                            <button className="caseInputButt" type="submit"> <b>SUBMIT</b> </button>
+                        </div>
+                    </form>  
                 </div>
-                <form className="caseForm" onSubmit={this.handleSubmit}>
-                    <div className="caseInputLabel">TEST DATE : 
-                        <div className="caseInputDiv">
-                            <input className="inputElement"  style={{ borderRadius: "15px", textAlign: "right", fontStyle: "normal", fontFamily: "sans-serif", color: "black" }} type="date" name="test_date" value={test_date} onChange={this.handleChange}/>
-                        </div>
-                    </div>
-                    <div className="caseInputLabel">STATE :
-                        <div className="caseInputDiv">
-                            {/* <input placeholder="State" style={{borderRadius: "10px", textAlign: "center"}} type="text" name="state" value={state} onChange={this.handleChange} /> */}
-                            <select className="inputElement"  style={{borderRadius: "10px", textAlign: "center", padding: "2.5px"}} onChange={this.stateHandleChange}>
-                                {stateOptions.map((stateOption, index) => (
-                                    <option key={index} value={stateOption} name="state" >{stateOption}</option>
-                                ))}
-                            </select>
-                        </div>
-                    </div>
-                    <div>
-                        <p style={{visibility: "hidden", width: "0px"}} value={site_name} name="site_name">{site_name}</p>
-                    </div>
-                    <div className="caseInputLabel">TEST SITE :
-                        <div className="caseInputDiv">
-                            <select className="inputElement" style={{borderRadius: "10px", textAlign: "center", padding: "2.5px"}} onChange={this.onSiteChange}>
-                                {testing_site.map((site, index) => (
-                                    <option key={index} name="testing_site" value={site} >{site}</option>
-                                ))}
-                            </select>
-                        </div>
-                    </div>
-                    <div id="caseButtDiv" className="caseInputDiv">
-                        <button className="caseInputButt" type="submit"> <b>SUBMIT</b> </button>
-                    </div>
-                </form>  
-            </div>
-        )
+            )
+        } else {
+            return (
+                <div className="formSuccess">
+                    <span className="spanTags">Thank you</span> for your submition!<br></br> You will now be <span className="spanTags">redirected</span> to the <span className="spanTags">homepage</span>.
+                </div>
+            )
+        }
     }
 }
 
