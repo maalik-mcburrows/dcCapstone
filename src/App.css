@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-color: rgb(171, 171, 171);
+  background-color: rgb(41, 41, 41);
 }
 
 main {
@@ -10,7 +10,7 @@ main {
   height: 100vh;
   border-radius: 5px;
   padding: 5px;
-  
+  background-color: rgb(41, 41, 41);
 }
 
 .wrapper {
@@ -18,7 +18,7 @@ main {
   grid-template-columns: 1fr 5fr 2fr;
   grid-template-rows: 3fr 1fr;
   grid-column-gap: 5px;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(41, 41, 41);
   /* margin: 0 auto;    */
   height: 94%;
   width: 100%;
@@ -155,17 +155,79 @@ html, body {
 }
 
 .caseTitle {
-  width: 480px;
-  padding: 50px;
+  width: 420px;
   font-family: impact;
   font-style: italic;
   font-variant: small-caps;
+  color: white;
+  padding: 25px;
+  background-color: rgb(72, 72, 72);
+  margin: auto;
+  margin-bottom: 25px;
+  border-radius: 15px;
 }
 
 .caseForm {
   display: inline-flex;
+  align-items: center;
+}
+
+.caseInputDiv {
+  margin-right: 10px;
+  padding: 10px;
+  background-color: rgb(72, 72, 72);
+  border-radius: 25px;
+  margin-top: 5px;
+  display: block;
+}
+
+#caseButtDiv {
+  margin-top: 25px;
+}
+
+.caseInputButt {
+  background-color: red;
+  border-radius: 10px;
+  border-color: red;
+}
+
+.caseInputLabel {
+  color: white;
+  padding: 10px;
+  font-family: impact;
+  font-style: italic;
+  font-size: 13px;
+  /* background-color: rgb(72, 72, 72); */
+
+}
+
+.inputElement {
+  border-radius: 15px;
+  text-align: right;
+  font-style: normal;
+  font-family: sans-serif;
+  color: black;
+  font-size: 10px;
+  /* display: none; */
 }
 
 .exercise {
   margin: auto;
 }
+/* 
+.caseInputDiv:hover .inputElement{
+  display: block;
+  background-color: 	lightgray;
+  border-color: lightgray;
+} */
+
+/* #caseInputDiv:hover .caseInputLabel{
+  color: red;
+} */
+
+#caseButtDiv:hover .caseInputButt{
+  background-color: #cc0000;
+  border-color:  #cc0000;
+}
+
+/* .caseInputLabel:hover  .caseInputDiv {display: inline-flex;} */
