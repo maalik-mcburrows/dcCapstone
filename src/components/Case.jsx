@@ -39,13 +39,13 @@ class Case extends Component {
         const testSiteUrl = await fetch(`https://covid-19-testing.github.io/locations/${stateName.toLowerCase()}/complete.json`);
         const response = await testSiteUrl.json();
         const siteNames = [];
-        response.map(site => {
+        const sites = response.map(site => {
             return siteNames.push(site.name);
         });
         console.log(siteNames);
         this.setState({
             testing_site : siteNames
-        });
+        })
         // console.log('test site =>', sites);
     }
 
@@ -53,10 +53,10 @@ class Case extends Component {
         event.preventDefault()
         const data = this.state
         console.log(data);
-        // const url = 'http://localhost:9000/case';
-        // axios.post(url,data)
-        // .then(response=>console.log(response))
-        // .catch(e=>console.log(e))
+    //     const url = 'http://localhost:9000/case';
+    //     axios.post(url,data)
+    //     .then(response=>console.log(response))
+    //     .catch(e=>console.log(e))
     }
 
     render() {
@@ -66,8 +66,7 @@ class Case extends Component {
         'Montana' , 'Nebraska' , 'Nevada' , 'New-Hampshire' , 'New-Jersey' , 'New-Mexico' , 'New-York' , 'North-Carolina' , 'North-Dakota' , 'Ohio', 'Oklahoma' , 'Oregon' , 'Pennsylvania', 'South-Carolina', 
         'Tennessee' , 'Texas' , 'Utah' , 'Vermont' , 'Virginia' , 'Washington' , 'West-Virginia' , 'Wisconsin' , 'Wyoming' ]
 
-        let { test_date, testing_site } = this.state
-        console.log('this the sites', testing_site);
+        const { test_date, testing_site } = this.state
         return (
             <div className="case">
                 <div className="caseTitle">
@@ -91,7 +90,7 @@ class Case extends Component {
                     </div>
                     <div className="caseInputLabel">TEST SITE :
                         <div className="caseInputDiv">
-                            <select className="inputElement" style={{borderRadius: "10px", textAlign: "center", padding: "2.5px"}} onChange={this.onSiteChange}>
+                            <select className="inputElement"  style={{borderRadius: "10px", textAlign: "center", padding: "2.5px"}} onChange={this.onSiteChange}>
                                 {testing_site.map((site, index) => (
                                     <option key={index} name="testing_site" value={site} >{site}</option>
                                 ))}
