@@ -1,10 +1,10 @@
 const db = require ('./conn');
 
 class caseModel {
-    constructor(id, test_date, testing_site, state) {
+    constructor(id, test_date, site_name, state) {
         this.is = id,
         this.test_date = test_date,
-        this.testing_site = testing_site,
+        this.site_name = site_name,
         this.state = state
     }
 
@@ -19,11 +19,11 @@ class caseModel {
         }
     }
 
-    static async addCase(test_date, testing_site, state) {
+    static async addCase(test_date, site_name, state) {
         try{
             const response = await db.one(
-                `INSERT INTO corona_cases (test_date, testing_site, state) VALUES ($1, $2, $3) RETURNING id`, 
-                [test_date, testing_site, state]
+                `INSERT INTO corona_cases (test_date, site_name, state) VALUES ($1, $2, $3) RETURNING id`, 
+                [test_date, site_name, state]
             );
             console.log('RESPONSE FROM USER: ', response);
             return response;

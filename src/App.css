@@ -214,12 +214,12 @@ html, body {
 .exercise {
   margin: auto;
 }
-/* 
+
 .caseInputDiv:hover .inputElement{
-  display: block;
+  /* display: block; */
   background-color: 	lightgray;
   border-color: lightgray;
-} */
+}
 
 /* #caseInputDiv:hover .caseInputLabel{
   color: red;

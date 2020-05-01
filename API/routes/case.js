@@ -11,13 +11,13 @@ router.post('/', async (req, res) => {
     console.log(req.body);
     const{
         test_date,
-        testing_site,
+        site_name,
         state
     } = req.body
 
     const postData = await caseModel.addCase(
         test_date,
-        testing_site,
+        site_name,
         state
     );
     console.log('DATA FROM FRONT END USER RESPONSE: ', postData);

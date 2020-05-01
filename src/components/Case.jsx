@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
 import axios from 'axios';
+import { Redirect } from "react-router-dom";
 
 class Case extends Component {
 
     state = { 
         test_date: "",
+        state: "alabama" ,
+        site_name : 'asite',
         testing_site: [],
-        state: "alabama" 
+        redirect: null
     }
 
     handleChange = (event) => {
@@ -30,7 +33,7 @@ class Case extends Component {
 
     onSiteChange = (event) => {
         this.setState({
-            testing_site : [event.target.value]
+            site_name : event.target.value
         })
         console.log(this.state.testing_site)
     }
@@ -53,10 +56,15 @@ class Case extends Component {
         event.preventDefault()
         const data = this.state
         console.log(data);
-        // const url = 'http://localhost:9000/case';
-        // axios.post(url,data)
-        // .then(response=>console.log(response))
-        // .catch(e=>console.log(e))
+        const url = 'http://localhost:9000/case';
+        axios.post(url,data)
+        .then(response=>{ if (response.status === 200) {
+            this.setState({
+                redirect : "/"
+            })
+            console.log(response);
+        }}) 
+        .catch(e=>console.log(e))        
     }
 
     render() {
@@ -66,7 +74,12 @@ class Case extends Component {
         'Montana' , 'Nebraska' , 'Nevada' , 'New-Hampshire' , 'New-Jersey' , 'New-Mexico' , 'New-York' , 'North-Carolina' , 'North-Dakota' , 'Ohio', 'Oklahoma' , 'Oregon' , 'Pennsylvania', 'South-Carolina', 
         'Tennessee' , 'Texas' , 'Utah' , 'Vermont' , 'Virginia' , 'Washington' , 'West-Virginia' , 'Wisconsin' , 'Wyoming' ]
 
-        let { test_date, testing_site } = this.state
+        const { test_date, testing_site, site_name } = this.state
+
+        if (this.state.redirect) {
+            return <Redirect to={this.state.redirect} />
+          }
+
         console.log('this the sites', testing_site);
         return (
             <div className="case">
@@ -88,6 +101,9 @@ class Case extends Component {
                                 ))}
                             </select>
                         </div>
+                    </div>
+                    <div>
+                        <p style={{visibility: "hidden", width: "0px"}} value={site_name} name="site_name">{site_name}</p>
                     </div>
                     <div className="caseInputLabel">TEST SITE :
                         <div className="caseInputDiv">
